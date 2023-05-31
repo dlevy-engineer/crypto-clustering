@@ -32,7 +32,7 @@ Use the following steps to cluster the cryptocurrencies for the best value for $
     - Color the graph points with the labels found using $k$-means.
        - Add the "coin_id" column in the hover_cols parameter to identify the cryptocurrency represented by each data point.
        
-       ![Original clustering](/images/orig_clusters.png)
+    ![Original clustering](/images/orig_clusters.png)
 
 ### Optimize Clusters with Principal Component Analysis
 Using the original scaled DataFrame, perform a PCA and reduce the features to three principal components.
@@ -67,10 +67,14 @@ Fit the K-means model using the PCA data.
 Predict the clusters to group the cryptocurrencies using the PCA data.
 Create a copy of the DataFrame with the PCA data and add a new column to store the predicted clusters.
 
-### Visualize and Compare the Results
-Create a scatter plot using hvPlot as follows:
-Set the x-axis as "price_change_percentage_24h" and the y-axis as "price_change_percentage_7d".
+Create a scatter plot using hvPlot:
+- Set the x-axis as "price_change_percentage_24h" and the y-axis as "price_change_percentage_7d".
 Color the graph points with the labels found using K-means.
 Add the "coin_id" column in the hover_cols parameter to identify the cryptocurrency represented by each data point.
-Answer the following question:
-What is the impact of using fewer features to cluster the data using K-Means?
+
+### Visualize and Compare the Results
+
+![Elbow compare](/images/elbows.png)
+![Cluster compare](/images/clusters.png)
+
+While the scatterplot representation of the clusters appears to have changed drastically, it seems that we have approximately the same distribution of data points within each cluster, with similar separation as represented in a 2-dimensional plane. This, along with the variance capture measures examined above, indicates that condensing the data through principal component analysis has not resulted in significant information loss.
