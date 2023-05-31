@@ -39,8 +39,8 @@ Use the following steps to cluster the cryptocurrencies for the best value for $
 ### Optimize Clusters with Principal Component Analysis
 1. Using the original scaled DataFrame, perform a PCA and reduce the features to three principal components.
 
-2. Retrieve the explained variance to determine how much information can be attributed to each principal component and then answer the following question in your notebook:
-- About 89.5% of the total explained variance of the total variance is condensed into the three principal components.
+2. Retrieve the explained variance to determine how much information can be attributed to each principal component:
+    - About 89.5% of the total explained variance of the total variance is condensed into the three principal components.
 
 3. The first five rows of the PCA DataFrame appear as follows:
 
@@ -54,19 +54,23 @@ Use the elbow method on the PCA data to find the best value for $k$:
 - Create a dictionary with the data to plot the elbow curve.
 - Plot a line chart with all the inertia values computed with the different values of $k$ to visually identify the optimal value for $k$.
 
+![PCA elbow](/images/pca_elbow.png)
+
 The best value for $k$ when using the PCA data is 4. Note that this _does not differ_ from the best $k$ value found using the original scaled data.
 
 ### Cluster Cryptocurrencies with $k$-means Using the PCA Data
 1. Cluster the cryptocurrencies for the best value for $k$ on the PCA data:
-- Initialize the $k$-means model with the best value for $k$.
-- Fit the $k$-means model using the PCA data.
-- Predict the clusters to group the cryptocurrencies using the PCA data.
-- Create a copy of the DataFrame with the PCA data and add a new column to store the predicted clusters.
+    - Initialize the $k$-means model with the best value for $k$.
+    - Fit the $k$-means model using the PCA data.
+    - Predict the clusters to group the cryptocurrencies using the PCA data.
+    - Create a copy of the DataFrame with the PCA data and add a new column to store the predicted clusters.
 
 2. Create a scatter plot using hvPlot:
-- Set the $x$-axis as "PC1" and the $y$-axis as "PC2".
-- Color the graph points with the labels found using $k$-means.
-- Add the "coin_id" column in the hover_cols parameter to identify the cryptocurrency represented by each data point.
+    - Set the $x$-axis as "PC1" and the $y$-axis as "PC2".
+    - Color the graph points with the labels found using $k$-means.
+    - Add the "coin_id" column in the hover_cols parameter to identify the cryptocurrency represented by each data point.
+
+    ![PCA clustering](/images/pca_clusters.png)
 
 ### Visualize and Compare the Results
 
