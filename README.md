@@ -9,7 +9,7 @@ An unsupervised learning project and general ML process exploration using crypto
 2. Create a DataFrame with the scaled data and set the 'coin_id' index from the original DataFrame as the index for the new DataFrame.
 
 3. The first five rows of the scaled DataFrame appear as follows:
-    ![Scaled DataFrame head](/images/scaled_df.png)
+![Scaled DataFrame head](/images/scaled_df.png)
 
 ### Find the Best Value for $k$ Using the Original Scaled DataFrame
 Use the elbow method to find the best value for $k$:
@@ -19,7 +19,7 @@ Use the elbow method to find the best value for $k$:
 - Create a dictionary with the data to plot the elbow curve.
 - Plot a line chart with all the inertia values computed with the different values of $k$ to visually identify the optimal value for $k$.
     
-    ![Original elbow curve](/images/orig_elbow.png)
+![Original elbow curve](/images/orig_elbow.png)
 
 The slope of the elbow curve significantly flattens at $k=4$, which tells us this is likely our "ideal" value for $k$.
 
@@ -34,7 +34,7 @@ Use the following steps to cluster the cryptocurrencies for the best value for $
     - Color the graph points with the labels found using $k$-means.
     - Add the "coin_id" column in the hover_cols parameter to identify the cryptocurrency represented by each data point.
        
-    ![Original clustering](/images/orig_clusters.png)
+![Original clustering](/images/orig_clusters.png)
 
 ### Optimize Clusters with Principal Component Analysis
 1. Using the original scaled DataFrame, perform a PCA and reduce the features to three principal components.
@@ -44,7 +44,7 @@ Use the following steps to cluster the cryptocurrencies for the best value for $
 
 3. The first five rows of the PCA DataFrame appear as follows:
 
-    ![PCA DataFrame head](/images/pca_df.png)
+![PCA DataFrame head](/images/pca_df.png)
 
 ### Find the Best Value for $k$ Using the PCA Data
 Use the elbow method on the PCA data to find the best value for $k$:
@@ -70,7 +70,7 @@ The best value for $k$ when using the PCA data is 4. Note that this _does not di
     - Color the graph points with the labels found using $k$-means.
     - Add the "coin_id" column in the hover_cols parameter to identify the cryptocurrency represented by each data point.
 
-    ![PCA clustering](/images/pca_clusters.png)
+![PCA clustering](/images/pca_clusters.png)
 
 ### Visualize and Compare the Results
 
