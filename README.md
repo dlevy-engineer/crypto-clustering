@@ -13,26 +13,26 @@ An unsupervised learning project and general ML process exploration using crypto
 
 ### Find the Best Value for $k$ Using the Original Scaled DataFrame
 Use the elbow method to find the best value for $k$:
-    - Create a list with the number of $k$ values from 1 to 11.
-    - Create an empty list to store the inertia values.
-    - Create a for loop to compute the inertia with each possible value of $k$.
-    - Create a dictionary with the data to plot the elbow curve.
-    - Plot a line chart with all the inertia values computed with the different values of $k$ to visually identify the optimal value for $k$.
-
+- Create a list with the number of $k$ values from 1 to 11.
+- Create an empty list to store the inertia values.
+- Create a for loop to compute the inertia with each possible value of $k$.
+- Create a dictionary with the data to plot the elbow curve.
+- Plot a line chart with all the inertia values computed with the different values of $k$ to visually identify the optimal value for $k$.
+    
     ![Original elbow curve](/images/orig_elbow.png)
 
 ### Cluster Cryptocurrencies with $k$-means Using the Original Scaled Data
 Use the following steps to cluster the cryptocurrencies for the best value for $k$ on the original scaled data:
-    - Initialize the $k$-means model with the best value for $k$.
-    - Fit the $k$-means model using the original scaled DataFrame.
-    - Predict the clusters to group the cryptocurrencies using the original scaled DataFrame.
-    - Create a copy of the original data and add a new column with the predicted clusters.
-    - Create a scatter plot using hvPlot:
-        - Set the x-axis as "price_change_percentage_24h" and the y-axis as "price_change_percentage_7d".
-        - Color the graph points with the labels found using $k$-means.
-        - Add the "coin_id" column in the hover_cols parameter to identify the cryptocurrency represented by each data point.
-
-        ![Original clustering](/images/orig_clusters.png)
+- Initialize the $k$-means model with the best value for $k$.
+- Fit the $k$-means model using the original scaled DataFrame.
+- Predict the clusters to group the cryptocurrencies using the original scaled DataFrame.
+- Create a copy of the original data and add a new column with the predicted clusters.
+- Create a scatter plot using hvPlot:
+    - Set the x-axis as "price_change_percentage_24h" and the y-axis as "price_change_percentage_7d".
+    - Color the graph points with the labels found using $k$-means.
+       - Add the "coin_id" column in the hover_cols parameter to identify the cryptocurrency represented by each data point.
+       
+       ![Original clustering](/images/orig_clusters.png)
 
 ### Optimize Clusters with Principal Component Analysis
 Using the original scaled DataFrame, perform a PCA and reduce the features to three principal components.
