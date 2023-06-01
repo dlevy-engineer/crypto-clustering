@@ -1,4 +1,4 @@
-# CryptoClustering
+# crypto-clustering
 An unsupervised learning project and general ML process exploration using crypto market data.
 
 ## Procedure
